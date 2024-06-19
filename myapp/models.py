@@ -14,4 +14,11 @@ class League(models.Model):
     
     def __str__(self):
         return self.league_name
+
+
+
+
+class user(models.Model):
+    name=models.CharField(max_length=49)
+       
     
