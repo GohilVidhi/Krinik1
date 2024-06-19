@@ -92,20 +92,30 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'defaultdb',
+#         'USER': 'doadmin',
+#         'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',  # Replace with your actual password
+#         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
+#         'PORT': '3306',
+        
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'defaultdb',
-        'USER': 'doadmin',
-        'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',  # Replace with your actual password
+        'USER': ' doadmin',
+        'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0 ',
         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
-        'PORT': '3306',
-        
+        'PORT': '25060',
+       
     }
 }
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
