@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .import views
+from .views import*
 
 urlpatterns = [
     
     path('', views.index, name='index'),
-   
+    path('league_get/', League_view.as_view()),
+    path('league_get/<int:id>/', League_view.as_view()),
+
     
 ]
