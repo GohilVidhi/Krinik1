@@ -22,3 +22,15 @@ class user(models.Model):
     name=models.CharField(max_length=49)
        
     
+
+#------Team Models----------   
+    
+class Team(models.Model):
+    league_name=models.ForeignKey(League,on_delete=models.CASCADE)  
+    team_name=models.CharField(max_length=50,blank=True,null=True)      
+    team_short_name=models.CharField(max_length=50,blank=True,null=True)      
+    team_image=models.ImageField(upload_to="league_image_media")
+    team_date=models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.team_name    
