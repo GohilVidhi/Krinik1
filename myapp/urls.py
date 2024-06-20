@@ -24,6 +24,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('league_get/', League_view.as_view()),
     path('league_get/<int:id>/', League_view.as_view()),
-
+    
+    path('team_get/', Team_view.as_view()),
+    path('team_get/<int:id>/', Team_view.as_view()),
     
 ]
