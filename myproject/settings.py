@@ -100,30 +100,21 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #     }
 # }
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'defaultdb',
-#         'USER': 'doadmin',
-#         'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',  # Replace with your actual password
-#         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
-#         'PORT': '3306',
-        
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'defaultdb',
-        'USER': ' doadmin',
+        'USER': 'doadmin',
         'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',
         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
         'PORT': '25060',
-         
-       
+        'OPTIONS': {
+            'ssl': {
+                'ca': str(BASE_DIR / 'ca-certificate.crt'),
+                'cert': str(BASE_DIR / 'client-cert.pem'),
+                'key': str(BASE_DIR / 'client-key.pem'),
+            },
+        },
     }
 }
 
