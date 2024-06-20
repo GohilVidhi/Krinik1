@@ -17,9 +17,6 @@ class League(models.Model):
 
 
 
-
-class user(models.Model):
-    name=models.CharField(max_length=49)
        
     
 
