@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   
+   'corsheaders',
     'rest_framework',
     'myapp'
 ]
@@ -71,11 +71,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     
 ]
 
 
-
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
@@ -153,6 +154,22 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS"
+]
+
+CORS_ALLOW_HEADERS = [
+    "Content-Type",
+    "Authorization"
+]
 
 
 # Static files (CSS, JavaScript, Images)
