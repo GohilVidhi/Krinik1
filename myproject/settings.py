@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+
+# Assuming your proxy server sets the header X-Forwarded-Proto to 'https'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Ensure cookies are only sent over HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 # Application definition
 
