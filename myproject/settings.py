@@ -120,13 +120,7 @@ DATABASES = {
         'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',
         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
         'PORT': '25060',
-        'OPTIONS': {
-            'ssl': {
-                'ca': str(BASE_DIR / 'ca-certificate.crt'),
-                'cert': str(BASE_DIR / 'client-cert.pem'),
-                'key': str(BASE_DIR / 'client-key.pem'),
-            },
-        },
+        
     }
 }
 
