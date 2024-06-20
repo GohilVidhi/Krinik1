@@ -120,7 +120,7 @@ DATABASES = {
         'USER': 'doadmin',
         'PASSWORD': 'AVNS_vW6ohuDg7kpdicijCe0',
         'HOST': 'db-mysql-blr1-79734-do-user-16983913-0.c.db.ondigitalocean.com',
-        'PORT': '25060',
+        'PORT': '3306',
         
     }
 }
