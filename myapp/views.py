@@ -66,3 +66,66 @@ class League_view(APIView):
                 return Response({'status':"invalid id"})
         else:
             return Response({'status':"invalid data"})
+
+
+
+
+
+
+
+
+#---------------Team View----------------------
+
+
+
+class Team_view(APIView):
+    def get(self,request,id=None):  
+        if id:
+        
+            try:
+                uid=Team.objects.get(id=id)
+                serializer=Team_serializers(uid)
+                return Response({'status':'success','data':serializer.data})
+            except:
+                return Response({'status':"Invalid"})
+        else:
+            uid=Team.objects.all()
+            serializer=Team_serializers(uid,many=True)
+            return Response({'status':'success','data':serializer.data})
+      
+    def post(self,request):
+        serializer=Team_serializers(data=request.data)
+        print(serializer)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'status':'success','data':serializer.data})
+        else:
+            return Response({'status':"invalid data"})
+        
+     
+    def patch(self,request,id=None):
+        try:
+            uid=Team.objects.get(id=id)
+        except:
+            return Response({'status':"invalid data"})
+        serializer=Team_serializers(uid,data=request.data,partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'status':'success','data':serializer.data})
+        else:
+            return Response({'status':"invalid data"})
+        
+        
+        
+        
+              
+    def delete(self,request,id=None):
+        if id:
+            try:
+                uid=Team.objects.get(id=id)
+                uid.delete()
+                return Response({'status':'Deleted data'})
+            except:
+                return Response({'status':"invalid id"})
+        else:
+            return Response({'status':"invalid data"})
