@@ -34,16 +34,6 @@ class Migration(migrations.Migration):
                 ('league_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myapp.league')),
             ],
         ),
-        migrations.CreateModel(
-            name='Player',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('player_name', models.CharField(blank=True, max_length=50, null=True)),
-                ('player_short_name', models.CharField(blank=True, max_length=50, null=True)),
-                ('player_image', models.ImageField(upload_to='league_image_media')),
-                ('total_run', models.IntegerField(blank=True, null=True)),
-                ('league_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myapp.league')),
-                ('team_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myapp.team')),
-            ],
-        ),
+        
+       
     ]
