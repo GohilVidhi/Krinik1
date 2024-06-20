@@ -36,4 +36,40 @@ class League_serializers(serializers.Serializer):
         instance.save()
         return instance        
     
+
+
+
+
+
+   
+#-------------Team_serializers view----------------
     
+
+    
+class Team_serializers(serializers.Serializer):
+    id = serializers.IntegerField(required=False)
+    league_name = serializers.SlugRelatedField(slug_field='league_name', queryset=League.objects.all(), required=True)
+    team_name = serializers.CharField(max_length=100, required=True)
+    team_short_name=serializers.CharField(max_length=20,required=True)
+    team_image=serializers.ImageField(required=True)
+    team_date=serializers.DateField(read_only=True,required=False)
+    class Meta:
+        model = Team
+        fields = '__all__'
+        exclude = ('id',) 
+
+    
+
+    def create(self, validated_data):
+        return Team.objects.create(**validated_data)
+
+
+    def update(self, instance, validated_data):
+        instance.league_name=validated_data.get('league_name',instance.league_name)
+        instance.team_name=validated_data.get('team_name',instance.team_name)
+        instance.team_short_name=validated_data.get('team_short_name',instance.team_short_name)
+        instance.team_image=validated_data.get('team_image',instance.team_image)
+        instance.team_date=validated_data.get('team_date',instance.team_date)
+
+        instance.save()
+        return instance 
