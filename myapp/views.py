@@ -27,7 +27,7 @@ class League_view(APIView):
             except:
                 return Response({'status':"Invalid"})
         else:
-            uid=League.objects.all()
+            uid=League.objects.all().order_by("-id")
             serializer=League_serializers(uid,many=True)
             return Response({'status':'success','data':serializer.data})
       
@@ -84,7 +84,7 @@ class Team_view(APIView):
             except:
                 return Response({'status':"Invalid"})
         else:
-            uid=Team.objects.all()
+            uid=Team.objects.all().order_by("-id")
             serializer=Team_serializers(uid,many=True)
             return Response({'status':'success','data':serializer.data})
       
@@ -140,7 +140,7 @@ class Player_view(APIView):
             except:
                 return Response({'status':"Invalid"})
         else:
-            uid=Player.objects.all()
+            uid=Player.objects.all().order_by("-id")
             serializer=Player_serializers(uid,many=True)
             return Response({'status':'success','data':serializer.data})
       
