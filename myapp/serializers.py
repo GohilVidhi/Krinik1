@@ -9,7 +9,7 @@ from .models import*
 class League_serializers(serializers.Serializer):
     # id=serializers.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
     id = serializers.IntegerField(required=False)
-    league_name=serializers.CharField(max_length=20,required=True)
+    league_name=serializers.CharField(max_length=50,required=True)
     short_league_name=serializers.CharField(max_length=20,required=True)
     start_league_date=serializers.CharField(max_length=20,required=True)
     end_league_date=serializers.CharField(max_length=20,required=True)
