@@ -78,32 +78,32 @@ class Team_serializers(serializers.Serializer):
 
 #-------------Player_serializers view----------------
 
-# class Player_serializers(serializers.Serializer):
-#     id = serializers.IntegerField(required=False)
-#     league_name = serializers.SlugRelatedField(slug_field='league_name', queryset=League.objects.all(), required=True)
-#     team_name = serializers.SlugRelatedField(slug_field='team_name', queryset=Team.objects.all(), required=True)
-#     player_name = serializers.CharField(max_length=100, required=True)
-#     player_short_name=serializers.CharField(max_length=20,required=True)
-#     player_image=serializers.ImageField(required=True)
-#     total_run=serializers.IntegerField(required=False)
-#     class Meta:
-#         model = Player
-#         fields = '__all__'
-#         exclude = ('id',) 
+class Player_serializers(serializers.Serializer):
+    id = serializers.IntegerField(required=False)
+    league_name = serializers.SlugRelatedField(slug_field='league_name', queryset=League.objects.all(), required=True)
+    team_name = serializers.SlugRelatedField(slug_field='team_name', queryset=Team.objects.all(), required=True)
+    player_name = serializers.CharField(max_length=100, required=True)
+    player_short_name=serializers.CharField(max_length=20,required=True)
+    player_image=serializers.ImageField(required=True)
+    total_run=serializers.IntegerField(required=False)
+    class Meta:
+        model = Player
+        fields = '__all__'
+        exclude = ('id',) 
 
     
 
-#     def create(self, validated_data):
-#         return Player.objects.create(**validated_data)
+    def create(self, validated_data):
+        return Player.objects.create(**validated_data)
 
 
-#     def update(self, instance, validated_data):
-#         instance.league_name=validated_data.get('league_name',instance.league_name)
-#         instance.team_name=validated_data.get('team_name',instance.team_name)
-#         instance.player_name=validated_data.get('player_name',instance.player_name)
-#         instance.player_short_name=validated_data.get('player_short_name',instance.player_short_name)
-#         instance.player_image=validated_data.get('player_image',instance.player_image)
-#         instance.total_run=validated_data.get('total_run',instance.total_run)
+    def update(self, instance, validated_data):
+        instance.league_name=validated_data.get('league_name',instance.league_name)
+        instance.team_name=validated_data.get('team_name',instance.team_name)
+        instance.player_name=validated_data.get('player_name',instance.player_name)
+        instance.player_short_name=validated_data.get('player_short_name',instance.player_short_name)
+        instance.player_image=validated_data.get('player_image',instance.player_image)
+        instance.total_run=validated_data.get('total_run',instance.total_run)
  
-#         instance.save()
-#         return instance
+        instance.save()
+        return instance
