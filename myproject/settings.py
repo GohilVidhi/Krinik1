@@ -179,8 +179,8 @@ CORS_ALLOW_HEADERS = [
 STATIC_URL = 'static/'
 STATIC_ROOT =  os.path.join(BASE_DIR,"static")
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/league_image_media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'league_image_media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
