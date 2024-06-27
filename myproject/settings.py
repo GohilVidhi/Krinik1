@@ -180,7 +180,7 @@ CORS_ALLOW_HEADERS = [
 STATIC_URL = 'static/'
 STATIC_ROOT =  os.path.join(BASE_DIR,"static")
 
-MEDIA_URL = '/league_image_media/'
+MEDIA_URL = 'league_image_media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'league_image_media')
 
 # Default primary key field type
