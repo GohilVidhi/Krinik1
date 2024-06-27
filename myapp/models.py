@@ -37,14 +37,14 @@ class Team(models.Model):
 #------Player Models----------  
 
 
-class Player(models.Model):
-    league_name=models.ForeignKey(League,on_delete=models.CASCADE)  
-    team_name=models.ForeignKey(Team,on_delete=models.CASCADE)  
-    player_name=models.CharField(max_length=50,blank=True,null=True)      
-    player_short_name=models.CharField(max_length=50,blank=True,null=True)      
-    player_image=models.ImageField(upload_to="league_image_media")
-    total_run=models.IntegerField(blank=True,null=True)  
+# class Player(models.Model):
+#     league_name=models.ForeignKey(League,on_delete=models.CASCADE)  
+#     team_name=models.ForeignKey(Team,on_delete=models.CASCADE)  
+#     player_name=models.CharField(max_length=50,blank=True,null=True)      
+#     player_short_name=models.CharField(max_length=50,blank=True,null=True)      
+#     player_image=models.ImageField(upload_to="league_image_media")
+#     total_run=models.IntegerField(blank=True,null=True)  
 
 
-    def __str__(self):
-        return self.player_name        
+#     def __str__(self):
+#         return self.player_name        
