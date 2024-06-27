@@ -62,7 +62,7 @@ INSTALLED_APPS = [
    'corsheaders',
     'rest_framework',
     'myapp',
-    'lazy_image',
+   
 ]
 
 MIDDLEWARE = [
